@@ -18,6 +18,6 @@ spec: #Deployment Specification
     spec: #container specification
       containers:
       - name: nginx #list in python
-        image: nginx:1.14.2
+        image: nginx:1.14.2 #http://acme.com/v1/nginx
         ports:
         - containerPort: 80 #internal container port
