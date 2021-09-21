@@ -30,7 +30,12 @@ spec: #Deployment Specification
         volumeMounts: #inside your container this is the path of your storage
           - name: mysql-persistent-storage
             mountPath: /var/lib/mysql #this is the storage path inside your container
+          - name: usermanagement-db-creation-script
+            mountPath: /docker-entrypoint-initdb.d  #i want to upload my configmap 
       volumes:
         - name: mysql-persistent-storage
           persistentVolumeClaim:
             claimName: task-pv-claim #claim
+        - name: usermanagement-db-creation-script
+          configMap:
+            name: usermanagement-db-creation-script #mapped with configmap
