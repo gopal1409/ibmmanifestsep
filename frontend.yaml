@@ -20,7 +20,7 @@ spec:
         - name: init-db
           image: busybox #using this i can run shell script. 
           command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']  
-      container:
+      containers:
         - name: usermgmt-webapp
           image: stacksimplify/kube-usermgmt-webapp:1.0.0-MySQLDB
           ports:
