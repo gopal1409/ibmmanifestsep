@@ -4,5 +4,5 @@ metadata:
   name: usermanagement-db-creation-script
 data:
   mysql_usermgmt.sql |-
-    DROP DATABASE IF EXIST webappdb;
+    DROP DATABASE IF EXISTS webappdb;
     CREATE DATABASE webappdb;
