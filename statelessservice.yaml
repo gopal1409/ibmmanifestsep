@@ -6,8 +6,8 @@ metadata:
     app: nginx 
 spec: 
   ports:
-    - port: 80
-      name: web
-    clusterIP: None 
-    selector:
+  - port: 80
+    name: web
+  clusterIP: None 
+  selector:
       app: nginx
