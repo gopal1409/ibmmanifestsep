@@ -27,7 +27,7 @@ spec:
       name: www
     spec:
       accessModes: ["ReadWriteOnce"]
-      storageClassName: "nodestorage"
+      storageClassName: "statestorage"
       resources:
         requests:
           storage: 1Gi
