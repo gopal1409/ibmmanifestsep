@@ -12,16 +12,16 @@ spec:
     metadata:
       labels:
         app: nginx
-  
-    containers:
-    - name: nginx 
-      image: nginx
-      ports:
-      - containerPort: 80
-      name: web
-      volumeMounts:
-      - name: www
-        mountPath: /usr/share/nginx/html
+    spec:
+      containers:
+      - name: nginx 
+        image: nginx
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
   volumeClaimTemplates:
   - metadata:
       name: www
