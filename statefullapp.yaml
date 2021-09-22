@@ -26,8 +26,8 @@ spec:
   - metadata:
       name: www
     spec:
-      accessModes: ReadWriteOnce
-      storageClassName: nodestorage 
+      accessModes: ["ReadWriteOnce"]
+      storageClassName: "nodestorage"
       resources:
         requests:
           storage: 1Gi
