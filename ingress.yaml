@@ -6,10 +6,10 @@ spec:
   rules:
   - http:
       paths:
-      - path: /app1/
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: app1-nginx-deployment-service
+            name: usermgmt-webapp-service
             port:
               number: 80
