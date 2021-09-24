@@ -8,7 +8,7 @@ spec:
       paths:
       - path: /
         pathType: Prefix
-        backend:
+        defaultBackend:
           service:
             name: usermgmt-webapp-service
             port:
