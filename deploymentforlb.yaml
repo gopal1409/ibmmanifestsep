@@ -3,30 +3,21 @@
 apiVersion: apps/v1 #it invoke tha api version apps/v1
 kind: Deployment #we are invoking Deployment api Deployment is unique
 metadata: #when it create a deploy ment 
-  name: nginx-deployment #using metadata we are giving the name 
+  name: app1-nginx-deployment #using metadata we are giving the name 
   labels:
-    app: nginx 
+    app1: nginx 
 spec: #Deployment Specification
-  affinity:
-    podAffinity:
-      requiredDuringSchedulingIngnoreDuringExecution:
-      nodeSelectorTerms:
-      - matchExpression
-        - key: disktype
-          operator: In 
-          values:
-          - ssd
-  replicas: 3  #three pod one it create three pod how deployment is going to be mapped with all this three pod
+  replicas: 1  #three pod one it create three pod how deployment is going to be mapped with all this three pod
   selector: #key value
     matchLabels: #all this three pod will have label
-      app: nginx #line 10 to 13 line this is for the Pod
+      app1: nginx #line 10 to 13 line this is for the Pod
   template: #inside your pod it should create container before that it should download the image inside your pod
     metadata:
       labels:
-        app: nginx #same label should be define which we have define in line 13
+        app1: nginx #same label should be define which we have define in line 13
     spec: #container specification
       containers:
       - name: nginx #list in python
-        image: nginx:1.14.2 #http://acme.com/v1/nginx
+        image: stacksimplify/kube-nginxapp1:1.0.0
         ports:
         - containerPort: 80 #internal container port
